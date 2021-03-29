@@ -25,12 +25,12 @@ consoleHandler.setLevel(logging.INFO)
 logging.basicConfig(filename=log_filename, level=logging.WARNING)
 logging.getLogger().addHandler(consoleHandler)
 
-# database_repos = Miner.getRepos(
-#     max_num_of_repos, current_directory + '/pydefects.db')
-# repo_name_path = Miner.downloadRepos(database_repos)
+database_repos = Miner.getRepos(
+    max_num_of_repos, current_directory + '/pydefects.db')
+repo_name_path = Miner.downloadRepos(database_repos)
 
-# Use this for only pre-downloaded repos. Ignoring Database
-# repo_name_path = Miner.getOfflineRepos()
+Use this for only pre-downloaded repos. Ignoring Database
+repo_name_path = Miner.getOfflineRepos()
 
 
 def executeMining():
@@ -112,11 +112,11 @@ def executeTests():  # Test Execution
     SQLiteSerializer.close()
 
 
-# executeMining()
-# hydrateData()
-# transformCode()
-# executeTests()
-# TraceToDB.execute()
-# DataEval.run()
+executeMining()
+hydrateData()
+transformCode()
+executeTests()
+TraceToDB.execute()
+DataEval.run()
 StaticEval.run()
 DynamicEval.run()
